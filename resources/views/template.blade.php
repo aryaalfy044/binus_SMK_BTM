@@ -18,6 +18,8 @@
   <link rel="stylesheet" href="{{ asset('/admin/vendors/mdi/css/materialdesignicons.min.css') }}"/>
   <!-- endinject -->
   <link rel="shortcut icon" href="{{ asset('/admin/images/favicon.png')}}" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 <body>
 <div class="row" id="proBanner"></div>
@@ -57,6 +59,10 @@
   <!-- Custom js for this page-->
   <script src="{{ asset('/admin/js/dashboard.js') }}" ></script>
   <!-- End custom js for this page-->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+      flatpickr("input[type=date]");
+  </script>
 </body>
 
 </html>

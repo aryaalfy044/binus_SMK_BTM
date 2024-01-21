@@ -19,9 +19,11 @@ class CreateUsersTable extends Migration
             $table->string('address');
             $table->string('login_id')->unique();
             $table->string('password');
-            $table->string('role');
+            $table->string('role_id');
             $table->string('birth_place');
-            $table->dateTime('birth_date');
+            $table->date('birth_date');
+            $table->string('email_address');
+            $table->string('gender');
         });
 
         Schema::create('users_log_dt', function (Blueprint $table) {

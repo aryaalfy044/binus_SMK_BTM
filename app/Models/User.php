@@ -19,9 +19,10 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name', 'address', 'login_id', 'password',  'role', 'birth_place', 'birth_date',
-    ];
+    // protected $fillable = [
+    //     'name', 'address', 'login_id', 'password', 'role_id', 'birth_place', 'birth_date', 'email', 'gender',
+    // ];
+    protected $guarded = [];
 
     public $timestamps = false;
 
@@ -43,25 +44,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function store(Request $request)
-    {
-        $data = $request->validate([
-            'name' => 'required',
-            'address' => 'required',
-            'login_id' => 'required|unique:users',
-            'password' => 'required|min:8',
-            'address' => 'required',
-            'role' => 'required',
-            'birth_place' => 'required',
-            'birth_date' => 'required|date',
-        ]);
-
-        $data['password'] = Hash::make($data['password']);
-
-        User::create($data);
-
-        // Redirect atau tampilkan pesan sukses
-        return redirect()->back()->with('success', 'User berhasil dibuat');
-    }
 }

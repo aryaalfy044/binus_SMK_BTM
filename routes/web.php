@@ -17,6 +17,13 @@ Route::get('/', function () {
     return view('template');
 });
 
-
+//home
 Route::get('home', 'App\Http\Controllers\HomeController@index');
-Route::get('list-users', 'App\Http\Controllers\UsersController@listUser');
+
+//user
+Route::get('list-users', 'App\Http\Controllers\UsersController@listUser')->name('list-users');
+Route::get('add-user', 'App\Http\Controllers\UsersController@addUser')->name('add-user');
+Route::post('store-user', 'App\Http\Controllers\UsersController@storeUser')->name('store-user');
+
+//role
+Route::get('list-roles', 'App\Http\Controllers\RolesController@listRole')->name('list-users');
