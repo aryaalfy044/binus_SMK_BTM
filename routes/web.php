@@ -13,20 +13,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('template');
+
+
+//auth
+Route::get('/login', 'App\Http\Controllers\AuthController@showLoginForm')->name('login');
+Route::post('/login', 'App\Http\Controllers\AuthController@login')->name('login');
+Route::post('/logout', 'App\Http\Controllers\AuthController@logout')->name('logout');
+
+Route::middleware('auth')->group(function () {
+
+    Route::get('/', function () {
+        return view('template');
+    });
+    // Rute yang memerlukan otentikasi di sini
+    //home
+    Route::get('home', 'App\Http\Controllers\HomeController@index');
+
+    //user
+    Route::get('list-users', 'App\Http\Controllers\UsersController@listUser')->name('list-users');
+    Route::get('add-user', 'App\Http\Controllers\UsersController@addUser')->name('add-user');
+    Route::post('store-user', 'App\Http\Controllers\UsersController@storeUser')->name('store-user');
+
+    //role
+    Route::get('list-roles', 'App\Http\Controllers\RolesController@listRole')->name('list-roles');
 });
-
-//home
-Route::get('home', 'App\Http\Controllers\HomeController@index');
-
-//user
-Route::get('list-users', 'App\Http\Controllers\UsersController@listUser')->name('list-users');
-Route::get('add-user', 'App\Http\Controllers\UsersController@addUser')->name('add-user');
-Route::post('store-user', 'App\Http\Controllers\UsersController@storeUser')->name('store-user');
-
-//role
-Route::get('list-roles', 'App\Http\Controllers\RolesController@listRole')->name('list-roles');
-
-//login
-Route::get('login', 'App\Http\Controllers\LoginController@displayLogin')->name('login');
