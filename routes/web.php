@@ -27,3 +27,6 @@ Route::post('store-user', 'App\Http\Controllers\UsersController@storeUser')->nam
 
 //role
 Route::get('list-roles', 'App\Http\Controllers\RolesController@listRole')->name('list-roles');
+
+//login
+Route::get('login', 'App\Http\Controllers\LoginController@displayLogin')->name('login');
