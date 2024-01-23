@@ -18,12 +18,12 @@ class AuthController extends Controller
     {
         // Validasi data yang diterima dari formulir login
         $request->validate([
-            'username' => 'required',
+            'login_id' => 'required',
             'password' => 'required',
         ]);
 
         // Coba untuk melakukan otentikasi pengguna
-        $credentials = $request->only('username', 'password');
+        $credentials = $request->only('login_id', 'password');
         if (Auth::attempt($credentials)) {
             // Jika otentikasi berhasil, redirect ke halaman yang sesuai
             return redirect()->intended('/home');
