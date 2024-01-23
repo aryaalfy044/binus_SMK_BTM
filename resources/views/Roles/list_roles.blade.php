@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1>List user</h1>
+    <h2>List Roles</h2>
     <!-- Your home page content goes here -->
 
     <div class="card">
@@ -12,19 +12,19 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Name</th>
                             <th>Role</th>
+                            <th>Created at</th>
                             <th class="text-center"> <a href="{{ route('add-user') }}">Add</a> </th>
                             <!-- Add other columns as needed -->
                         </tr>
                     </thead>
                     <tbody>
                         @php $count = 1 @endphp
-                        @foreach ($users as $user)
+                        @foreach ($roles as $role)
                         <tr>
                             <td>{{ $count++ }}</td>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->role }}</td>
+                            <td>{{ $role->title }}</td>
+                            <td>{{ $role->created_at }}</td>
                             <td class="text-center">
                                 <button type="button" class="btn btn-warning btn-rounded btn-icon"><i class="mdi mdi mdi-pencil"></i></button>
                                 <button type="button" class="btn btn-danger btn-rounded btn-icon"><i class="mdi mdi mdi-delete"></i></button>

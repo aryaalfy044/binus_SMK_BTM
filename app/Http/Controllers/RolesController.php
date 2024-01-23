@@ -13,6 +13,6 @@ class RolesController extends Controller
     {
         $roles = Role::all();
 
-        return view('Users/list-roles', compact('users'));
+        return view('Roles/list_roles', compact('roles'));
     }
 }

@@ -21,6 +21,17 @@
                         @enderror
                     </div>
                     <div class="form-group">
+                        <label for="ddlGender">Gender</label>
+                        <select class="form-control" name="gender" id="ddlGender">
+                            <option value="">Select gender</option>
+                            <option {{ old('gender') == 'Male' ? "selected" : "" }} value="Male">Male</option>
+                            <option {{ old('gender') == 'Female' ? "selected" : "" }} value="Female">Female</option>
+                        </select>
+                        @error('gender')
+                        <small class="text-danger">{{ $message }}</small>
+                        @enderror
+                    </div>
+                    <div class="form-group">
                         <label for="txtUsername">Username</label>
                         <input type="text" class="form-control" name="login_id" id="txtUsername" placeholder="Username" value="{{ old('login_id') }}">
                         @error('login_id')
@@ -78,7 +89,7 @@
                         @enderror
                     </div>
                     <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                    <button type="button" class="btn btn-light" onclick="cancelRedirect();">Cancel</button>
+                    <button type="button" class="btn btn-light" onclick="cancelRedirect();">Kembali</button>
                 </form>
             </div>
         </div>

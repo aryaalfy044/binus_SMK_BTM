@@ -26,4 +26,4 @@ Route::get('add-user', 'App\Http\Controllers\UsersController@addUser')->name('ad
 Route::post('store-user', 'App\Http\Controllers\UsersController@storeUser')->name('store-user');
 
 //role
-Route::get('list-roles', 'App\Http\Controllers\RolesController@listRole')->name('list-users');
+Route::get('list-roles', 'App\Http\Controllers\RolesController@listRole')->name('list-roles');

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1>List user</h1>
+    <h2>List user</h2>
     <!-- Your home page content goes here -->
 
     <div class="card">
