@@ -4,7 +4,6 @@
 <div class="container">
     <h2>Attendance Report</h2>
     <!-- Your home page content goes here -->
-
     <div class="card">
         <div class="card-body">
             <div class="row">
@@ -42,10 +41,13 @@
                     </div>
                 </div>
             </div>
-            <br>
-            <br>
+        </div>
+    </div>
+    <br>
+    <div class="card">
+        <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-hover">
+                <table class="table table-hover" id="tblReport">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -87,8 +89,13 @@
     </div>
 </div>
 <script>
-    function deleteRoles() {
-        confirm("Are you sure to delete this roles?");
-    }
-</script>
+        $(document).ready(function () {
+            $('#tblReport').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'pdfHtml5'
+                ]
+            });
+        });
+    </script>
 @endsection

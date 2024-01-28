@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h2>Leave Report</h2>
+    <h2>Evaluation Report</h2>
     <!-- Your home page content goes here -->
     <div class="card">
         <div class="card-body">
@@ -54,20 +54,23 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Date From</th>
-                            <th>Date To</th>
-                            <th>Reason</th>
-                            <th>Status</th>
+                            <th>Employee Name</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Completed Date</th>
+                            <th>Evaluation Point</th>
                             <!-- Add other columns as needed -->
                         </tr>
                     </thead>
                     <tbody>
                         @php $count = 1 @endphp
-                        @foreach ($leaveRequest as $leaveRequest)
+                        @foreach ($tasks as $tasks)
                         <tr>
                             <td>{{ $count++ }}</td>
-                            <td>{{ $leaveRequest->title }}</td>
-                            <td>{{ $leaveRequest->created_at }}</td>
+                            <td>{{ $tasks->title }}</td>
+                            <td>{{ $tasks->created_at }}</td>
                             <td class="text-center">
                                 <button type="button" class="btn btn-warning btn-rounded btn-icon"><i class="mdi mdi mdi-pencil"></i></button>
                                 <button type="button" class="btn btn-danger btn-rounded btn-icon" onclick="deleteRoles();"><i class="mdi mdi mdi-delete"></i></button>
@@ -75,11 +78,14 @@
                         </tr>
                         @endforeach
                         <tr>
-                            <td>1</td>
-                            <td>28-12-2023</td>
-                            <td>31-12-2023</td>
-                            <td>Holiday</td>
-                            <td>Pending Approval</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                         </tr>
                     </tbody>
                 </table>

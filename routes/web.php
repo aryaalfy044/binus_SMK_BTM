@@ -59,4 +59,7 @@ Route::middleware('auth')->group(function () {
     Route::get('overtime-report', 'App\Http\Controllers\OvertimeController@getOvertimeRequestListReport')->name('overtime-request');
     Route::get('overtime-request', 'App\Http\Controllers\OvertimeController@addOvertime')->name('overtime-report');
 
+    //evaluation
+    Route::get('evaluation-report', 'App\Http\Controllers\evaluationController@getEvaluationReport')->name('evaluation-report');
+
 });
