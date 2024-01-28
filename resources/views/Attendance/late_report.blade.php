@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h2>Attendance Report</h2>
+    <h2>Late Report</h2>
     <!-- Your home page content goes here -->
     <div class="card">
         <div class="card-body">
@@ -11,7 +11,7 @@
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Date From</label>
                         <div class="col-sm-9">
-                            <input type="text" readonly class="form-control" value="28-12-2023"/>
+                            <input type="text" readonly class="form-control" value="28-12-2023" />
                         </div>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Date To</label>
                         <div class="col-sm-9">
-                            <input type="text" readonly class="form-control"value="28-01-2024"/>
+                            <input type="text" readonly class="form-control" value="28-01-2024" />
                         </div>
                     </div>
                 </div>
@@ -27,16 +27,19 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group row">
-                        <!-- <label class="col-sm-3 col-form-label">First Name</label> -->
+                        <label class="col-sm-3 col-form-label">Employee Name</label>
                         <div class="col-sm-9">
-                            <!-- <input type="text" class="form-control" /> -->
+                        <select class="form-control" name="role" id="role">
+                            <option value="">Select Employee</option>
+                            <option {{ old('role') == 'Male' ? "selected" : "" }} value="Arya">Arya</option>
+                        </select>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group row">
                         <div class="col-sm-9">
-                        <button style="float:right" type="submit" class="btn btn-primary mr-2">Filter</button>
+                            <button style="float:right" type="submit" class="btn btn-primary mr-2">Filter</button>
                         </div>
                     </div>
                 </div>
@@ -52,9 +55,9 @@
                         <tr>
                             <th>No</th>
                             <th>Employee Name</th>
-                            <th>Attendance Time</th>
-                            <th>Attendance Date</th>
-                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Duration</th>
                             <!-- Add other columns as needed -->
                         </tr>
                     </thead>
@@ -74,9 +77,9 @@
                         <tr>
                             <td>1</td>
                             <td>Arya</td>
-                            <td>08:05</td>
                             <td>28-12-2023</td>
-                            <td>Attend</td>
+                            <td>08:05</td>
+                            <td>5 Minute</td>
                         </tr>
                     </tbody>
                 </table>

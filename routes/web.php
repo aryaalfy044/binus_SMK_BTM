@@ -63,4 +63,7 @@ Route::middleware('auth')->group(function () {
     //evaluation
     Route::get('evaluation-report', 'App\Http\Controllers\evaluationController@getEvaluationReport')->name('evaluation-report');
 
+     //late report
+     Route::get('late-report', 'App\Http\Controllers\AttendanceController@lateReport')->name('late-report');
+
 });
