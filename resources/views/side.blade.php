@@ -1,7 +1,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="{{route('home')}}">
               <i class="typcn typcn-device-desktop menu-icon"></i>
               <span class="menu-title">Home</span>
             </a>
@@ -16,9 +16,8 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('manage-task-list')}}">Task List Management</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('task-list-report')}}">Task List Report</a></li>
               </ul>
             </div>
           </li>

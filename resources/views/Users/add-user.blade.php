@@ -64,11 +64,13 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="ddlGender">Gender</label>
-                        <select class="form-control" name="gender" id="ddlGender">
-                            <option value="">Select gender</option>
-                            <option {{ old('gender') == 'Male' ? "selected" : "" }} value="Male">Male</option>
-                            <option {{ old('gender') == 'Female' ? "selected" : "" }} value="Female">Female</option>
+                        <label for="ddlGender">Role</label>
+                        <select class="form-control" name="role" id="role">
+                            <option value="">Select Role</option>
+                            <option {{ old('role') == 'Male' ? "selected" : "" }} value="Male">Manager</option>
+                            <option {{ old('role') == 'Admin' ? "selected" : "" }} value="Female">Admin</option>
+                            <option {{ old('role') == 'Leader' ? "selected" : "" }} value="Female">Leader</option>
+                            <option {{ old('role') == 'Programmer' ? "selected" : "" }} value="Female">Programmer</option>
                         </select>
                         @error('gender')
                         <small class="text-danger">{{ $message }}</small>
