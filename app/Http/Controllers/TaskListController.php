@@ -12,12 +12,14 @@ class TaskListController extends Controller
 {
     public function getTaskListReport()
     {
+        $users = DB::table('users')->get();
+
         $tasks = DB::table('task')
             ->join('users', 'task.user_id', '=', 'users.id')
             ->select('task.*', 'users.name as user_name')
             ->get();
 
-        return view('TaskList.task-list-report', ['tasks' => $tasks]);
+        return view('TaskList.task-list-report', ['tasks' => $tasks, 'users'=>$users]);
     }
     public function getManageTaskListAll()
     {

@@ -10,7 +10,7 @@
     }
 </style>
 <div class="container">
-    <h2>Task Report</h2>
+    <h2>Overtime Report</h2>
 
     <div class="row">
         <div class="col col-12 grid-margin">
@@ -73,24 +73,22 @@
                                 <tr>
                                     <th>No</th>
                                     <th style="width:30px!important">Employee Name</th>
-                                    <th style="width:30px!important">Title</th>
-                                    <th style="width:30px!important">Description</th>
-                                    <th>Start Date</th>
-                                    <th>End Date</th>
-                                    <th>Progress</th>
+                                    <th >Date</th>
+                                    <th style="width:30px!important">Overtime Reason</th>
+                                    <th>Duration</th>
+                                    <th style="width:30px!important">Task</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @php $count = 1 @endphp
-                                @foreach ($tasks as $ot)
+                                @foreach ($overtimes as $ot)
                                 <tr>
                                     <td>{{ $count++ }}</td>
                                     <td>{{ $ot->user_name }}</td>
-                                    <td class="wrap-text">{{ $ot->title }}</td>
-                                    <td class="wrap-text">{{ $ot->description }}</td>
-                                    <td>{{ date('d/m/Y', strtotime($ot->start_date)) }}</td>
-                                    <td>{{ date('d/m/Y', strtotime($ot->end_date)) }}</td>
-                                    <td>{{ $ot->progress }}</td>
+                                    <td class="wrap-text">{{ date('d/m/Y', strtotime($ot->date)) }}</td>
+                                    <td class="wrap-text">{{ $ot->reason }}</td>
+                                    <td>{{ $ot->duration }}</td>
+                                    <td>{{ $ot->task }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>

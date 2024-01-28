@@ -45,7 +45,28 @@
   </script>
 
   <script src="{{ asset('/admin/js/chart.js') }}"></script>
+
+  <!-- datatable -->
+
+  <!-- CSS DataTables -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
+
+  <!-- JS DataTables with Buttons and PDFMake -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/vfs_fonts.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
 </head>
+
+<style>
+  table.dataTable thead th,
+  table.dataTable thead td {
+    border-bottom: unset !important;
+  }
+</style>
 
 <body>
   <div class="row" id="proBanner"></div>
