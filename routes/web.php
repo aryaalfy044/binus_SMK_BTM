@@ -17,10 +17,10 @@ use Illuminate\Support\Facades\Route;
 
 //auth
 Route::get('/login', 'App\Http\Controllers\AuthController@showLoginForm')->name('login');
-Route::post('/login', 'App\Http\Controllers\AuthController@login');
+Route::post('/login', 'App\Http\Controllers\AuthController@login')->name('login');
 Route::post('/logout', 'App\Http\Controllers\AuthController@logout')->name('logout');
 
-Route::group(['middleware' => 'web'], function () {
+Route::middleware('auth')->group(function () {
 
     Route::get('/', function () {
         return view('template');
