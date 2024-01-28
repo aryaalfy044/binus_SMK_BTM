@@ -32,19 +32,19 @@
                     </thead>
                     <tbody>
                         @php $count = 1 @endphp
-                        @foreach ($tasks as $task)
+                        @foreach ($tasks as $ot)
                         <tr>
                             <td>{{ $count++ }}</td>
-                            <td>{{ $task->user_name }}</td>
-                            <td class="wrap-text">{{ $task->title }}</td>
-                            <td class="wrap-text">{{ $task->description }}</td>
-                            <td>{{ date('d/m/Y', strtotime($task->start_date)) }}</td>
-                            <td>{{ date('d/m/Y', strtotime($task->end_date)) }}</td>
-                            <td>{{ $task->progress }}</td>
+                            <td>{{ $ot->user_name }}</td>
+                            <td class="wrap-text">{{ $ot->title }}</td>
+                            <td class="wrap-text">{{ $ot->description }}</td>
+                            <td>{{ date('d/m/Y', strtotime($ot->start_date)) }}</td>
+                            <td>{{ date('d/m/Y', strtotime($ot->end_date)) }}</td>
+                            <td>{{ $ot->progress }}</td>
                             <td class="text-center">
-                                <button type="button" class="btn btn-warning btn-rounded btn-icon edit-btn"  data-task-id="{{ $task->id }}"><i
+                                <button type="button" class="btn btn-warning btn-rounded btn-icon edit-btn"  data-task-id="{{ $ot->id }}"><i
                                         class="mdi mdi mdi-pencil"></i></button>
-                                <button type="button" class="btn btn-danger btn-rounded btn-icon" data-task-id="{{ $task->id }}"><i
+                                <button type="button" class="btn btn-danger btn-rounded btn-icon" data-task-id="{{ $ot->id }}"><i
                                         class="mdi mdi mdi-delete delete-btn"></i></button>
                             </td>
                         </tr>

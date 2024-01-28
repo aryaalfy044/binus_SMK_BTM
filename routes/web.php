@@ -43,4 +43,8 @@ Route::middleware('auth')->group(function () {
     Route::get('add-task-list', 'App\Http\Controllers\TaskListController@addTaskList')->name('add-task-list');
     Route::get('edit-task-list/{id}', 'App\Http\Controllers\TaskListController@editTaskList')->name('edit-task-list');
 
+    //overtime
+    Route::get('overtime-report', 'App\Http\Controllers\OvertimeController@getOvertimeRequestListReport')->name('overtime-request');
+    Route::get('overtime-request', 'App\Http\Controllers\OvertimeController@addOvertime')->name('overtime-report');
+
 });

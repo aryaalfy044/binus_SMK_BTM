@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Task extends Migration
+class OvertimeMigration extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class Task extends Migration
      */
     public function up()
     {
-        Schema::create('task', function (Blueprint $table) {
+        Schema::create('overtimes', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->string('title');
-            $table->string('description');
-            $table->string('progress');
-            $table->datetime('start_date');
-            $table->datetime('end_date');
+            $table->integer('employee_id');
+            $table->string('team');
+            $table->date('date');
+            $table->string('duration');
+            $table->text('reason');
+            $table->text('task');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class Task extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tasks');
+        Schema::dropIfExists('overtimes');
     }
 }
