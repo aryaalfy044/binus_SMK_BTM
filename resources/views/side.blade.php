@@ -38,12 +38,12 @@
 
           <!-- Overtime -->
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" data-toggle="collapse" href="#overtime" aria-expanded="false" aria-controls="overtime">
               <i class="typcn typcn-document-text menu-icon"></i>
               <span class="menu-title">Overtime</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-basic">
+            <div class="collapse" id="overtime">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{route('overtime-request')}}">Overtime Request</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{route('overtime-report')}}">Overtime Report</a></li>
