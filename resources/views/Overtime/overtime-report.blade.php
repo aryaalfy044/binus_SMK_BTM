@@ -104,7 +104,17 @@
             $('#tblReport').DataTable({
                 dom: 'Bfrtip',
                 buttons: [
-                    'pdfHtml5'
+                    {
+                        extend: 'pdfHtml5',
+                        text: 'PDF',
+                        filename: function () {
+                            return 'Overtime Report';
+                        },
+                        customize: function (doc) {
+                            doc.title = 'Overtime Report';
+                        },
+                        title : "Overtime Report"
+                    }
                 ]
             });
         });

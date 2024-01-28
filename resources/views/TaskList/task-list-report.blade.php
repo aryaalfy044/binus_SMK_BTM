@@ -82,7 +82,7 @@
                             </thead>
                             <tbody>
                                 @php $count = 1 @endphp
-                                @foreach ($tasks as $task)
+                                @foreach ($task as $task)
                                 <tr>
                                     <td>{{ $count++ }}</td>
                                     <td>{{ $task->user_name }}</td>
@@ -111,11 +111,9 @@
                         extend: 'pdfHtml5',
                         text: 'PDF',
                         filename: function () {
-                            // Ganti dengan judul yang diinginkan
                             return 'Task List Report';
                         },
                         customize: function (doc) {
-                            // Tambahkan penyesuaian lainnya jika diperlukan
                             doc.title = 'Task List Report';
                         },
                         title : "Task List Report"

@@ -65,18 +65,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- @php $count = 1 @endphp
-                        @foreach ($tasks as $tasks)
+                        @php $count = 1 @endphp
+                        @foreach ($tasks as $task)
                         <tr>
                             <td>{{ $count++ }}</td>
-                            <td>{{ $tasks->title }}</td>
-                            <td>{{ $tasks->created_at }}</td>
+                            <td>{{ $task->user_name }}</td>
+                            <td>{{ $task->title }}</td>
+                            <td>{{ $task->description }}</td>
+                            <td>{{ date('d/m/Y', strtotime($task->start_date)) }}</td>
+                            <td>{{ date('d/m/Y', strtotime($task->end_date)) }}</td>
+                            <td>{{ date('d/m/Y', strtotime($task->end_date)) }}</td>
                             <td class="text-center">
-                                <button type="button" class="btn btn-warning btn-rounded btn-icon"><i class="mdi mdi mdi-pencil"></i></button>
-                                <button type="button" class="btn btn-danger btn-rounded btn-icon" onclick="deleteRoles();"><i class="mdi mdi mdi-delete"></i></button>
+                                1
                             </td>
                         </tr>
-                        @endforeach -->
+                        @endforeach
                         <tr>
                             <td></td>
                             <td></td>
@@ -98,7 +101,17 @@
         $('#tblReport').DataTable({
             dom: 'Bfrtip',
             buttons: [
-                'pdfHtml5'
+                {
+                    extend: 'pdfHtml5',
+                    text: 'PDF',
+                    filename: function () {
+                        return 'Evaluation Report';
+                    },
+                    customize: function (doc) {
+                        doc.title = 'Evaluation Report';
+                    },
+                    title: "Evaluation Report"
+                }
             ]
         });
     });

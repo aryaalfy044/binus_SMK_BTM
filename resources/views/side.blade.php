@@ -83,6 +83,20 @@
               </ul>
             </div>
           </li>
+
+          <!-- Users -->
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#users" aria-expanded="false" aria-controls="icons">
+              <i class="typcn typcn-group-outline menu-icon"></i>
+              <span class="menu-title">Users</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="users">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="{{route('list-users')}}">Management Users</a></li>
+              </ul>
+            </div>
+          </li>
         </ul>
       </nav>
 

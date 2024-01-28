@@ -29,10 +29,10 @@
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Employee Name</label>
                         <div class="col-sm-9">
-                        <select class="form-control" name="role" id="role">
-                            <option value="">Select Employee</option>
-                            <option {{ old('role') == 'Male' ? "selected" : "" }} value="Arya">Arya</option>
-                        </select>
+                            <select class="form-control" name="role" id="role">
+                                <option value="">Select Employee</option>
+                                <option {{ old('role')=='Male' ? "selected" : "" }} value="Arya">Arya</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -69,8 +69,10 @@
                             <td>{{ $leaveRequest->title }}</td>
                             <td>{{ $leaveRequest->created_at }}</td>
                             <td class="text-center">
-                                <button type="button" class="btn btn-warning btn-rounded btn-icon"><i class="mdi mdi mdi-pencil"></i></button>
-                                <button type="button" class="btn btn-danger btn-rounded btn-icon" onclick="deleteRoles();"><i class="mdi mdi mdi-delete"></i></button>
+                                <button type="button" class="btn btn-warning btn-rounded btn-icon"><i
+                                        class="mdi mdi mdi-pencil"></i></button>
+                                <button type="button" class="btn btn-danger btn-rounded btn-icon"
+                                    onclick="deleteRoles();"><i class="mdi mdi mdi-delete"></i></button>
                             </td>
                         </tr>
                         @endforeach
@@ -88,11 +90,21 @@
     </div>
 </div>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#tblReport').DataTable({
             dom: 'Bfrtip',
             buttons: [
-                'pdfHtml5'
+                {
+                    extend: 'pdfHtml5',
+                    text: 'PDF',
+                    filename: function () {
+                        return 'Leave Request Report';
+                    },
+                    customize: function (doc) {
+                        doc.title = 'Leave Request Report';
+                    },
+                    title: "Leave Request Report"
+                }
             ]
         });
     });

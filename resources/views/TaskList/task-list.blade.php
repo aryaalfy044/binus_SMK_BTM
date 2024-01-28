@@ -32,7 +32,7 @@
                     </thead>
                     <tbody>
                         @php $count = 1 @endphp
-                        @foreach ($tasks as $task)
+                        @foreach ($task as $task)
                         <tr>
                             <td>{{ $count++ }}</td>
                             <td>{{ $task->user_name }}</td>

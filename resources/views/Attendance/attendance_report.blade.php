@@ -11,7 +11,7 @@
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Date From</label>
                         <div class="col-sm-9">
-                            <input type="text" readonly class="form-control" value="28-12-2023"/>
+                            <input type="text" readonly class="form-control" value="28-12-2023" />
                         </div>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Date To</label>
                         <div class="col-sm-9">
-                            <input type="text" readonly class="form-control"value="28-01-2024"/>
+                            <input type="text" readonly class="form-control" value="28-01-2024" />
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                 <div class="col-md-6">
                     <div class="form-group row">
                         <div class="col-sm-9">
-                        <button style="float:right" type="submit" class="btn btn-primary mr-2">Filter</button>
+                            <button style="float:right" type="submit" class="btn btn-primary mr-2">Filter</button>
                         </div>
                     </div>
                 </div>
@@ -66,8 +66,10 @@
                             <td>{{ $attandance->title }}</td>
                             <td>{{ $attandance->created_at }}</td>
                             <td class="text-center">
-                                <button type="button" class="btn btn-warning btn-rounded btn-icon"><i class="mdi mdi mdi-pencil"></i></button>
-                                <button type="button" class="btn btn-danger btn-rounded btn-icon" onclick="deleteRoles();"><i class="mdi mdi mdi-delete"></i></button>
+                                <button type="button" class="btn btn-warning btn-rounded btn-icon"><i
+                                        class="mdi mdi mdi-pencil"></i></button>
+                                <button type="button" class="btn btn-danger btn-rounded btn-icon"
+                                    onclick="deleteRoles();"><i class="mdi mdi mdi-delete"></i></button>
                             </td>
                         </tr>
                         @endforeach
@@ -85,13 +87,30 @@
     </div>
 </div>
 <script>
-        $(document).ready(function () {
-            $('#tblReport').DataTable({
-                dom: 'Bfrtip',
-                buttons: [
-                    'pdfHtml5'
-                ]
-            });
+    $(document).ready(function () {
+        $('#tblReport').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                {
+                    extend: 'pdfHtml5',
+                    text: 'PDF',
+                    filename: function () {
+                        return 'Attendance Report';
+                    },
+                    customize: function (doc) {
+                        doc.title = 'Attendance Report';
+                    },
+                    title: "Attendance Report",
+                    autoTable: {
+                        styles: { tableWidth: 'wrap' },
+                        columnStyles: {
+                            0: { columnWidth: 'auto' },
+                            1: { columnWidth: 'auto' },
+                        }
+                    }
+                }
+            ]
         });
-    </script>
+    });
+</script>
 @endsection
