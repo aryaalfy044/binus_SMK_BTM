@@ -53,7 +53,8 @@
                             <th>No</th>
                             <th>Employee Name</th>
                             <th>Attendance Time</th>
-                            <th>Attend</th>
+                            <th>Attendance Date</th>
+                            <th>Status</th>
                             <!-- Add other columns as needed -->
                         </tr>
                     </thead>
@@ -74,13 +75,8 @@
                             <td>1</td>
                             <td>Arya</td>
                             <td>08:05</td>
-                            <td>
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="checkbox" class="form-check-input">
-                                    </label>
-                                </div>
-                            </td>
+                            <td>28-12-2023</td>
+                            <td>Attend</td>
                         </tr>
                     </tbody>
                 </table>
