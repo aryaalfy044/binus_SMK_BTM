@@ -27,7 +27,7 @@ Route::middleware('auth')->group(function () {
     });
     // Rute yang memerlukan otentikasi di sini
     //home
-    Route::get('home', 'App\Http\Controllers\HomeController@index');
+    Route::get('home', 'App\Http\Controllers\HomeController@index')->name('home');
 
     //user
     Route::get('list-users', 'App\Http\Controllers\UsersController@listUser')->name('list-users');
@@ -38,8 +38,9 @@ Route::middleware('auth')->group(function () {
     Route::get('list-roles', 'App\Http\Controllers\RolesController@listRole')->name('list-roles');
 
     //tasklist
+    Route::get('task-list-report', 'App\Http\Controllers\TaskListController@getTaskListReport')->name('task-list-report');
     Route::get('manage-task-list', 'App\Http\Controllers\TaskListController@getManageTaskListAll')->name('manage-task-list');
     Route::get('add-task-list', 'App\Http\Controllers\TaskListController@addTaskList')->name('add-task-list');
-    Route::get('edit-task-list', 'App\Http\Controllers\TaskListController@editTaskList')->name('edit-task-list');
+    Route::get('edit-task-list/{id}', 'App\Http\Controllers\TaskListController@editTaskList')->name('edit-task-list');
 
 });
