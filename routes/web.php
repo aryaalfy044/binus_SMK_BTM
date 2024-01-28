@@ -33,9 +33,21 @@ Route::middleware('auth')->group(function () {
     Route::get('list-users', 'App\Http\Controllers\UsersController@listUser')->name('list-users');
     Route::get('add-user', 'App\Http\Controllers\UsersController@addUser')->name('add-user');
     Route::post('store-user', 'App\Http\Controllers\UsersController@storeUser')->name('store-user');
+    Route::get('edit-user', 'App\Http\Controllers\UsersController@editUser')->name('edit-user');
 
     //role
     Route::get('list-roles', 'App\Http\Controllers\RolesController@listRole')->name('list-roles');
+    Route::get('edit-role', 'App\Http\Controllers\RolesController@editRole')->name('edit-roles');
+    Route::get('add-role', 'App\Http\Controllers\RolesController@addRole')->name('add-roles');
+
+    //leave request
+    Route::get('leave-request', 'App\Http\Controllers\LeaveRequestController@leaveRequest')->name('leave-request');
+    Route::get('leave-report', 'App\Http\Controllers\LeaveRequestController@leaveReport')->name('leave-report');
+    Route::get('leave-approval', 'App\Http\Controllers\LeaveRequestController@leaveApproval')->name('leave-approval');
+
+    //attendace
+    Route::get('attendance', 'App\Http\Controllers\AttendanceController@attendance')->name('attendance');
+    Route::get('attendance-report', 'App\Http\Controllers\AttendanceController@attendanceReport')->name('attendance-report');
 
     //tasklist
     Route::get('task-list-report', 'App\Http\Controllers\TaskListController@getTaskListReport')->name('task-list-report');

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h2>List user</h2>
+    <h2>Leave Report</h2>
     <!-- Your home page content goes here -->
 
     <div class="card">
@@ -12,25 +12,33 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Name</th>
-                            <th>Role</th>
-                            <th class="text-center"> <a href="{{ route('add-user') }}">Add</a> </th>
+                            <th>Date From</th>
+                            <th>Date To</th>
+                            <th>Reason</th>
+                            <th>Status</th>
                             <!-- Add other columns as needed -->
                         </tr>
                     </thead>
                     <tbody>
                         @php $count = 1 @endphp
-                        @foreach ($users as $user)
+                        @foreach ($leaveRequest as $leaveRequest)
                         <tr>
                             <td>{{ $count++ }}</td>
-                            <td>{{ $user->name }}</td>
-                            <td>Programmer</td>
+                            <td>{{ $leaveRequest->title }}</td>
+                            <td>{{ $leaveRequest->created_at }}</td>
                             <td class="text-center">
                                 <button type="button" class="btn btn-warning btn-rounded btn-icon"><i class="mdi mdi mdi-pencil"></i></button>
-                                <button type="button" class="btn btn-danger btn-rounded btn-icon" onclick="deleteUser();"><i class="mdi mdi mdi-delete"></i></button>
+                                <button type="button" class="btn btn-danger btn-rounded btn-icon" onclick="deleteRoles();"><i class="mdi mdi mdi-delete"></i></button>
                             </td>
                         </tr>
                         @endforeach
+                        <tr>
+                            <td>1</td>
+                            <td>28-12-2023</td>
+                            <td>31-12-2023</td>
+                            <td>Holiday</td>
+                            <td>Pending Approval</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -38,8 +46,8 @@
     </div>
 </div>
 <script>
-    function deleteUser() {
-       confirm("Are you sure to delete this user?");
+    function deleteRoles() {
+       confirm("Are you sure to delete this roles?");
     }
 </script>
 @endsection

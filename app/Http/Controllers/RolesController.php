@@ -15,4 +15,16 @@ class RolesController extends Controller
 
         return view('Roles/list_roles', compact('roles'));
     }
+    public function addRole()
+    {
+        $roles = Role::all();
+
+        return view('Roles/add_role', compact('roles'));
+    }
+    public function editRole()
+    {
+        $roles = Role::all();
+
+        return view('Roles/edit_role', compact('roles'));
+    }
 }

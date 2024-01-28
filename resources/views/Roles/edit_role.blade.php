@@ -9,26 +9,26 @@
     <div class="col-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">New Role</h4>
+                <h4 class="card-title">Edit Role</h4>
                 <br>
                 <form class="forms-sample" method="post" action="{{ route('store-user') }}">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="txtName">Role Name</label>
-                        <input type="text" class="form-control" name="name" id="txtName" placeholder="Name" value="{{ old('name') }}">
+                        <input type="text" class="form-control" name="name" id="txtName" placeholder="Name" value="Programmer">
                         @error('name')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
                     
                     <div class="form-group">
-                        <label for="txtAddress">Created Date</label>
-                        <input type="text" readonly class="form-control" name="address" id="txtAddress" placeholder="Created Date" value="28-01-2024">
+                        <label for="txtAddress">Updated Date</label>
+                        <input type="text" readonly class="form-control" name="address" id="txtAddress" placeholder="Created Date" value="28-12-2023">
                         @error('address')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <button type="submit" class="btn btn-primary mr-2">Update</button>
                     <button type="button" class="btn btn-light" onclick="cancelRedirect();">Kembali</button>
                 </form>
             </div>

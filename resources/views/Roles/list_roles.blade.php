@@ -27,14 +27,55 @@
                             <td>{{ $role->created_at }}</td>
                             <td class="text-center">
                                 <button type="button" class="btn btn-warning btn-rounded btn-icon"><i class="mdi mdi mdi-pencil"></i></button>
-                                <button type="button" class="btn btn-danger btn-rounded btn-icon"><i class="mdi mdi mdi-delete"></i></button>
+                                <button type="button" class="btn btn-danger btn-rounded btn-icon" onclick="deleteRoles();"><i class="mdi mdi mdi-delete"></i></button>
                             </td>
                         </tr>
                         @endforeach
+                        <tr>
+                            <td>1</td>
+                            <td>Manager</td>
+                            <td>28-12-2023</td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-warning btn-rounded btn-icon"><i class="mdi mdi mdi-pencil"></i></button>
+                                <button type="button" class="btn btn-danger btn-rounded btn-icon" onclick="deleteRoles();"><i class="mdi mdi mdi-delete"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Admin</td>
+                            <td>28-12-2023</td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-warning btn-rounded btn-icon"><i class="mdi mdi mdi-pencil"></i></button>
+                                <button type="button" class="btn btn-danger btn-rounded btn-icon" onclick="deleteRoles();"><i class="mdi mdi mdi-delete"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Leader</td>
+                            <td>28-12-2023</td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-warning btn-rounded btn-icon"><i class="mdi mdi mdi-pencil"></i></button>
+                                <button type="button" class="btn btn-danger btn-rounded btn-icon" onclick="deleteRoles();"><i class="mdi mdi mdi-delete"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Programmer</td>
+                            <td>28-12-2023</td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-warning btn-rounded btn-icon"><i class="mdi mdi mdi-pencil"></i></button>
+                                <button type="button" class="btn btn-danger btn-rounded btn-icon" onclick="deleteRoles();"><i class="mdi mdi mdi-delete"></i></button>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 </div>
+<script>
+    function deleteRoles() {
+       confirm("Are you sure to delete this roles?");
+    }
+</script>
 @endsection

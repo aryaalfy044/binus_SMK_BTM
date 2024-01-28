@@ -21,6 +21,12 @@ class UsersController extends Controller
 
         return view('Users/add-user', compact('users'));
     }
+    public function editUser()
+    {
+        $users = User::all();
+
+        return view('Users/edit-user', compact('users'));
+    }
     public function storeUser(Request $request)
     {
         // dd($request->all());
