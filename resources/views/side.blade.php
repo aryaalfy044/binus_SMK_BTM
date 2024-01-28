@@ -31,7 +31,8 @@
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Basic Elements</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('attendance')}}">Attendance</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('attendance-report')}}">Attendance Report</a></li>
               </ul>
             </div>
           </li>
@@ -60,7 +61,9 @@
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Basic table</a></li>
+              <li class="nav-item"><a class="nav-link" href="{{route('leave-request')}}">Leave Request</a></li>
+              <li class="nav-item"><a class="nav-link" href="{{route('leave-approval')}}">Leave Request Approval</a></li>
+              <li class="nav-item"><a class="nav-link" href="{{route('leave-report')}}">Leave Request Report</a></li>
               </ul>
             </div>
           </li>
