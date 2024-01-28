@@ -63,6 +63,7 @@
   <script>
       flatpickr("input[type=date]");
   </script>
+    <script src="{{ asset('/admin/js/chart.js') }}" ></script>
 </body>
 
 </html>

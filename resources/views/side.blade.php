@@ -55,7 +55,7 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
               <i class="typcn typcn-printer menu-icon"></i>
-              <span class="menu-title">On Leave Request</span>
+              <span class="menu-title">Leave Request</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="tables">
