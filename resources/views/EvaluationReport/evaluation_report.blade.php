@@ -65,7 +65,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @php $count = 1 @endphp
+                        <!-- @php $count = 1 @endphp
                         @foreach ($tasks as $tasks)
                         <tr>
                             <td>{{ $count++ }}</td>
@@ -76,7 +76,7 @@
                                 <button type="button" class="btn btn-danger btn-rounded btn-icon" onclick="deleteRoles();"><i class="mdi mdi mdi-delete"></i></button>
                             </td>
                         </tr>
-                        @endforeach
+                        @endforeach -->
                         <tr>
                             <td></td>
                             <td></td>
