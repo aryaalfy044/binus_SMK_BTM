@@ -28,4 +28,17 @@ class OvertimeController extends Controller
 
         return view('Overtime.overtime-report', compact('user_id', 'users', 'overtimes'));
     }
+
+    public function overtimeApprovalList()
+    {
+        $users = DB::table('users')->get();
+
+        $overtimes = DB::table('overtimes')
+            ->join('users', 'overtimes.employee_id', '=', 'users.id')
+            ->select('overtimes.*', 'users.name as user_name')
+            ->get();
+
+        return view('Overtime.overtime-approval', compact('users', 'overtimes'));
+    }
+
 }

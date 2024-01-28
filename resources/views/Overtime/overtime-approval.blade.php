@@ -98,15 +98,3 @@
             </div>
         </div>
     </div>
-
-    <script>
-        $(document).ready(function () {
-            $('#tblReport').DataTable({
-                dom: 'Bfrtip',
-                buttons: [
-                    'pdfHtml5'
-                ]
-            });
-        });
-    </script>
-    @endsection
