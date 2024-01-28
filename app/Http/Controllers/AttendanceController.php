@@ -21,4 +21,10 @@ class AttendanceController extends Controller
 
         return view('Attendance/attendance_report', compact('attandance'));
     }
+    public function lateReport()
+    {
+        $attandance = Attendance::all();
+
+        return view('Attendance/late_report', compact('attandance'));
+    }
 }

@@ -33,6 +33,7 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"><a class="nav-link" href="{{route('attendance')}}">Attendance</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{route('attendance-report')}}">Attendance Report</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('late-report')}}">Late Report</a></li>
               </ul>
             </div>
           </li>
