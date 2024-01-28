@@ -36,4 +36,10 @@ Route::group(['middleware' => 'web'], function () {
 
     //role
     Route::get('list-roles', 'App\Http\Controllers\RolesController@listRole')->name('list-roles');
+
+    //tasklist
+    Route::get('manage-task-list', 'App\Http\Controllers\TaskListController@getManageTaskListAll')->name('manage-task-list');
+    Route::get('add-task-list', 'App\Http\Controllers\TaskListController@addTaskList')->name('add-task-list');
+    Route::get('edit-task-list', 'App\Http\Controllers\TaskListController@editTaskList')->name('edit-task-list');
+
 });
