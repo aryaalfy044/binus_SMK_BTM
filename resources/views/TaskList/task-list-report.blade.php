@@ -44,7 +44,7 @@
                                         <select class="form-control" id="employee">
                                             <option selected value="0">All</option>
                                             @foreach ($users as $u)
-                                                <option value="{{$u->id }}">{{$u->name}}</option>
+                                            <option value="{{$u->id }}">{{$u->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -82,15 +82,15 @@
                             </thead>
                             <tbody>
                                 @php $count = 1 @endphp
-                                @foreach ($tasks as $ot)
+                                @foreach ($tasks as $task)
                                 <tr>
                                     <td>{{ $count++ }}</td>
-                                    <td>{{ $ot->user_name }}</td>
-                                    <td class="wrap-text">{{ $ot->title }}</td>
-                                    <td class="wrap-text">{{ $ot->description }}</td>
-                                    <td>{{ date('d/m/Y', strtotime($ot->start_date)) }}</td>
-                                    <td>{{ date('d/m/Y', strtotime($ot->end_date)) }}</td>
-                                    <td>{{ $ot->progress }}</td>
+                                    <td>{{ $task->user_name }}</td>
+                                    <td class="wrap-text">{{ $task->title }}</td>
+                                    <td class="wrap-text">{{ $task->description }}</td>
+                                    <td>{{ date('d/m/Y', strtotime($task->start_date)) }}</td>
+                                    <td>{{ date('d/m/Y', strtotime($task->end_date)) }}</td>
+                                    <td>{{ $task->progress }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -105,8 +105,21 @@
         $(document).ready(function () {
             $('#tblReport').DataTable({
                 dom: 'Bfrtip',
+                title: 'Task List Report',
                 buttons: [
-                    'pdfHtml5'
+                    {
+                        extend: 'pdfHtml5',
+                        text: 'PDF',
+                        filename: function () {
+                            // Ganti dengan judul yang diinginkan
+                            return 'Task List Report';
+                        },
+                        customize: function (doc) {
+                            // Tambahkan penyesuaian lainnya jika diperlukan
+                            doc.title = 'Task List Report';
+                        },
+                        title : "Task List Report"
+                    }
                 ]
             });
         });

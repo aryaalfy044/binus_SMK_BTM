@@ -22,14 +22,14 @@
                     </div>
                     <div class="form-group">
                         <label for="title_task">Title</label>
-                        <input type="text" class="form-control" name="title_task" id="title_task" placeholder="Title Task" value="{{ $ot->title }}" required>
+                        <input type="text" class="form-control" name="title_task" id="title_task" placeholder="Title Task" value="{{ $task->title }}" required>
                         @error('title_task')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <input type="text" class="form-control" name="description" id="description" placeholder="Description" value="{{ $ot->description }}" required>
+                        <input type="text" class="form-control" name="description" id="description" placeholder="Description" value="{{ $task->description }}" required>
                         @error('description')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror
@@ -37,14 +37,14 @@
                     <div class="form-group">
                         <label for="start_date">Start Date </label>
                         <input type="date" class="form-control" name="start_date" id="start_date" placeholder="dd/mm/yyyy" 
-                        value="{{ date('d/m/Y', strtotime($ot->start_date)) }}" required>
+                        value="{{ date('d/m/Y', strtotime($task->start_date)) }}" required>
                         @error('start_date')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="end_date">End Date</label>
-                        <input type="date" class="form-control" name="end_date" id="end_date" placeholder="dd/mm/yyyy" value="{{ date('d/m/Y', strtotime($ot->end_date)) }}" required>
+                        <input type="date" class="form-control" name="end_date" id="end_date" placeholder="dd/mm/yyyy" value="{{ date('d/m/Y', strtotime($task->end_date)) }}" required>
                         @error('end_date')
                         <small class="text-danger">{{ $message }}</small>
                         @enderror
@@ -53,11 +53,11 @@
                         <label for="ddlGender">Status</label>
                         <select class="form-control" name="status" id="status">
                             <option value="" disabled selected>Select status</option>
-                            <option {{ $ot->status == 'New' ? "selected" : "" }} value="New">New</option>
-                            <option {{ $ot->status == 'In Progress' ? "selected" : "" }} value="In Progress">In Progress</option>
-                            <option {{ $ot->status == 'Completed' ? "selected" : "" }} value="Completed">Completed</option>
-                            <option {{ $ot->status == 'UAT' ? "selected" : "" }} value="UAT">UAT</option>
-                            <option {{ $ot->status == 'Live' ? "selected" : "" }} value="Live">Live</option>
+                            <option {{ $task->status == 'New' ? "selected" : "" }} value="New">New</option>
+                            <option {{ $task->status == 'In Progress' ? "selected" : "" }} value="In Progress">In Progress</option>
+                            <option {{ $task->status == 'Completed' ? "selected" : "" }} value="Completed">Completed</option>
+                            <option {{ $task->status == 'UAT' ? "selected" : "" }} value="UAT">UAT</option>
+                            <option {{ $task->status == 'Live' ? "selected" : "" }} value="Live">Live</option>
                         </select>
                         @error('status')
                         <small class="text-danger">{{ $message }}</small>
