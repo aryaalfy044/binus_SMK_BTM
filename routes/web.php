@@ -20,7 +20,7 @@ Route::get('/login', 'App\Http\Controllers\AuthController@showLoginForm')->name(
 Route::post('/login', 'App\Http\Controllers\AuthController@login')->name('login');
 Route::post('/logout', 'App\Http\Controllers\AuthController@logout')->name('logout');
 
-Route::middleware('auth')->group(function () {
+// Route::middleware('auth')->group(function () {
 
     Route::get('/', function () {
         return view('template');
@@ -36,4 +36,4 @@ Route::middleware('auth')->group(function () {
 
     //role
     Route::get('list-roles', 'App\Http\Controllers\RolesController@listRole')->name('list-roles');
-});
+// });
